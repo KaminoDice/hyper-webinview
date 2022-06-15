@@ -1,4 +1,3 @@
-import './v8-snapshot-util';
 import {webFrame} from 'electron';
 import forceUpdate from 'react-deep-force-update';
 import {Provider} from 'react-redux';
