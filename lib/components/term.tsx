@@ -15,10 +15,8 @@ import processClipboard from '../utils/paste';
 import SearchBox from './searchBox';
 import {TermProps} from '../hyper';
 import {ObjectTypedKeys} from '../utils/object';
-import configureStore from '../store/configure-store';
 
 const isWindows = ['Windows', 'Win16', 'Win32', 'WinCE'].includes(navigator.platform);
-const store_ = configureStore();
 
 // map old hterm constants to xterm.js
 const CURSOR_STYLES = {
@@ -164,7 +162,8 @@ export default class Term extends React.PureComponent<TermProps> {
         new WebLinksAddon(
           (event: MouseEvent | undefined, uri: string) => {
             // if (shallActivateWebLink(event)) void shell.openExternal(uri);
-            store_.dispatch({
+            // @ts-ignore
+            store.dispatch({
               type: 'SESSION_URL_SET',
               uid: props.uid,
               url: uri

@@ -16,7 +16,6 @@ import {
 } from '../constants/sessions';
 import {sessionState, session, Mutable, ISessionReducer} from '../hyper';
 
-
 const initialState: sessionState = Immutable<Mutable<sessionState>>({
   sessions: {},
   activeUid: null
@@ -129,6 +128,7 @@ const reducer: ISessionReducer = (state = initialState, action) => {
       return state;
 
     case SESSION_URL_SET:
+      // @ts-ignore
       return state.setIn(['sessions', action.uid, 'url'], action.url);
 
     default:

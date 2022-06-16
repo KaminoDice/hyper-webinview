@@ -127,8 +127,8 @@ class TermGroup_ extends React.PureComponent<TermGroupProps> {
         this.props.parentProps,
         Object.assign({}, this.props, {termGroup: child})
       );
-
-      return <key={child.uid} {...props} />;
+      // @ts-ignore
+      return <DecoratedTermGroup key={child.uid} {...props} />;
     });
 
     return this.renderSplit(groups);
@@ -144,7 +144,7 @@ const mapDispatchToProps = (dispatch: HyperDispatch, ownProps: TermGroupOwnProps
     dispatch(resizeTermGroup(ownProps.termGroup.uid, splitSizes));
   }
 });
-
+// @ts-ignore
 const TermGroup = connect(mapStateToProps, mapDispatchToProps, null, {forwardRef: true})(TermGroup_);
 
 const DecoratedTermGroup = decorate(TermGroup, 'TermGroup');

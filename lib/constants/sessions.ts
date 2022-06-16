@@ -64,7 +64,6 @@ export interface SessionUserDataAction {
 }
 export interface SessionUrlSetAction {
   type: typeof SESSION_URL_SET;
-  url: string;
   uid: string;
 }
 export interface SessionUrlUnsetAction {

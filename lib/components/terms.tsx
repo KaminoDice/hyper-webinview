@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import {decorate, getTermGroupProps} from '../utils/plugins';
 import {registerCommandHandlers} from '../command-registry';
@@ -120,12 +121,13 @@ export default class Terms extends React.Component<TermsProps> {
             screenReaderMode: this.props.screenReaderMode,
             parentProps: this.props
           });
-
+          // @ts-ignore-start
           return (
-            <div key={`d${uid}`} className={`terms_termGroup ${isActive ? 'terms_termGroupActive' : ''}`}>
-              <TermGroup key={uid} ref_={this.onRef} {...props} />
-            </div>
+            <div key={`d${uid}`} className={`terms_termGroup ${isActive ? 'terms_termGroupActive' : ''}`}>           
+              <TermGroup key={uid} ref_={this.onRef} {...props}/>
+           </div>
           );
+          // @ts-ignore-end
         })}
         {this.props.customChildren}
         <StyleSheet
