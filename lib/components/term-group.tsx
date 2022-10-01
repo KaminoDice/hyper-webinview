@@ -127,7 +127,7 @@ class TermGroup_ extends React.PureComponent<TermGroupProps> {
         this.props.parentProps,
         Object.assign({}, this.props, {termGroup: child})
       );
-      // @ts-ignore
+// @ts-ignore
       return <DecoratedTermGroup key={child.uid} {...props} />;
     });
 

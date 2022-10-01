@@ -93,6 +93,7 @@ export default class Terms extends React.Component<TermsProps> {
             cursorShape: this.props.cursorShape,
             cursorBlink: this.props.cursorBlink,
             cursorColor: this.props.cursorColor,
+            cursorAccentColor: this.props.cursorAccentColor,
             fontSize: this.props.fontSize,
             fontFamily: this.props.fontFamily,
             uiFontFamily: this.props.uiFontFamily,
@@ -121,13 +122,13 @@ export default class Terms extends React.Component<TermsProps> {
             screenReaderMode: this.props.screenReaderMode,
             parentProps: this.props
           });
-          // @ts-ignore-start
+// @ts-ignore-start
           return (
-            <div key={`d${uid}`} className={`terms_termGroup ${isActive ? 'terms_termGroupActive' : ''}`}>           
-              <TermGroup key={uid} ref_={this.onRef} {...props}/>
-           </div>
+            <div key={`d${uid}`} className={`terms_termGroup ${isActive ? 'terms_termGroupActive' : ''}`}>
+              <TermGroup key={uid} ref_={this.onRef} {...props} />
+            </div>
           );
-          // @ts-ignore-end
+// @ts-ignore-end
         })}
         {this.props.customChildren}
         <StyleSheet
